@@ -1,0 +1,547 @@
+{
+ "config": {
+  "fs": 100,
+  "win": 100,
+  "hop": 50,
+  "trim_s": 0.5,
+  "seed": 42,
+  "tol": 0.01,
+  "var_floor": 0.01
+ },
+ "inventory": {
+  "device": "SM-G973F",
+  "platform": "android",
+  "app": "1.68",
+  "requested_ms": "10",
+  "measured_hz": 99.83501087034212,
+  "n_files": 200,
+  "hz_min": 98.16805914335585,
+  "hz_max": 100.09879663370971,
+  "raw_dur_min": 4.046002685546875,
+  "raw_dur_max": 9.242097167968751,
+  "n_under5": 17,
+  "median_gap_ms": 9.999999999999787,
+  "p99_gap_ms": 10.000976562499986,
+  "max_gap_ms": 99.769775390625,
+  "pct_gap_gt15": 0.0360889634913974,
+  "total_raw_s": {
+   "standing": 286.9431748046875,
+   "standstill": 315.69613671875,
+   "walking": 287.30506762695313,
+   "jumping": 303.5038264160156
+  }
+ },
+ "clean_seconds": {
+  "standing": 233.03,
+  "standstill": 261.24,
+  "walking": 233.81,
+  "jumping": 248.52
+ },
+ "windows": {
+  "standing": 388,
+  "standstill": 450,
+  "walking": 395,
+  "jumping": 422
+ },
+ "n_train_windows": 1330,
+ "n_test_windows": [
+  166,
+  159
+ ],
+ "test_files": [
+  [
+   "walking_17",
+   "standing_20",
+   "jumping_30",
+   "standing_10",
+   "standstill_20",
+   "jumping_07",
+   "standing_04",
+   "standstill_16",
+   "walking_12",
+   "walking_08",
+   "jumping_16",
+   "walking_22",
+   "standstill_09",
+   "jumping_20",
+   "standing_29",
+   "standing_05",
+   "walking_04",
+   "jumping_17",
+   "standstill_19",
+   "standstill_22"
+  ],
+  [
+   "jumping_32",
+   "jumping_34",
+   "standing_40",
+   "walking_27",
+   "standstill_41",
+   "standing_33",
+   "standstill_31",
+   "jumping_46",
+   "standing_50",
+   "standstill_42",
+   "walking_34",
+   "standstill_28",
+   "walking_47",
+   "jumping_50",
+   "walking_45",
+   "walking_32",
+   "standing_34",
+   "jumping_41",
+   "standing_45",
+   "standstill_36"
+  ]
+ ],
+ "cv": [
+  {
+   "variant": "no-transitions",
+   "features": "11 (acc+gyro)",
+   "cv_accuracy": 0.9738182492640153,
+   "cv_std": 0.008224316160865426
+  },
+  {
+   "variant": "supervised",
+   "features": "11 (acc+gyro)",
+   "cv_accuracy": 0.9707411885725712,
+   "cv_std": 0.010479289157991872
+  },
+  {
+   "variant": "supervised+BW",
+   "features": "11 (acc+gyro)",
+   "cv_accuracy": 0.9350568152141218,
+   "cv_std": 0.01481010365102499
+  },
+  {
+   "variant": "random+BW",
+   "features": "11 (acc+gyro)",
+   "cv_accuracy": 0.9342786050973902,
+   "cv_std": 0.014954484105248338
+  },
+  {
+   "variant": "supervised",
+   "features": "12 (+tilt)",
+   "cv_accuracy": 0.9769072365472867,
+   "cv_std": 0.006881281192220578
+  },
+  {
+   "variant": "supervised+BW",
+   "features": "12 (+tilt)",
+   "cv_accuracy": 0.9358568152141219,
+   "cv_std": 0.01336444034786002
+  }
+ ],
+ "bw": {
+  "iterations": 14,
+  "ll_start": -2280.3035978269686,
+  "ll_end": -1441.1068981315104,
+  "hist": [
+   -2280.3035978269686,
+   -1756.9066984170684,
+   -1616.7015959640003,
+   -1525.381069428264,
+   -1465.205887458676,
+   -1447.4047425083404,
+   -1443.144228922073,
+   -1441.8809896522175,
+   -1441.430779883316,
+   -1441.2501571091552,
+   -1441.1715203186736,
+   -1441.1355481581124,
+   -1441.1186846005203,
+   -1441.1106966646244,
+   -1441.1068981315104
+  ]
+ },
+ "A": [
+  [
+   0.8698521411179402,
+   0.04557947756370684,
+   0.05211623789030579,
+   0.03245214342804719
+  ],
+  [
+   0.04090684493926501,
+   0.9021959813958643,
+   0.034707182289906935,
+   0.02218999137496352
+  ],
+  [
+   0.05221312692297498,
+   0.021980241511121427,
+   0.892833136630772,
+   0.03297349493513159
+  ],
+  [
+   0.020958053372240725,
+   0.032934128957605495,
+   0.03892219679859103,
+   0.9071856208715628
+  ]
+ ],
+ "pi": [
+  0.249943784476892,
+  0.12505621552320983,
+  0.3749999999999152,
+  0.24999999999998307
+ ],
+ "dwell_s": [
+  3.8417842928411194,
+  5.112264374573023,
+  4.665621296363989,
+  5.38709631735075
+ ],
+ "test": {
+  "no-transitions": {
+   "acc": 0.96,
+   "acc_per_file": [
+    0.9518072289156626,
+    0.9685534591194969
+   ],
+   "C": [
+    [
+     74,
+     0,
+     7,
+     0
+    ],
+    [
+     6,
+     80,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     70,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     88
+    ]
+   ],
+   "table": [
+    {
+     "State": "standing",
+     "Samples": 81,
+     "Sensitivity": 0.9135802469135802,
+     "Specificity": 0.9754098360655737,
+     "Accuracy_1vsRest": 0.96
+    },
+    {
+     "State": "standstill",
+     "Samples": 86,
+     "Sensitivity": 0.9302325581395349,
+     "Specificity": 1.0,
+     "Accuracy_1vsRest": 0.9815384615384616
+    },
+    {
+     "State": "walking",
+     "Samples": 70,
+     "Sensitivity": 1.0,
+     "Specificity": 0.9725490196078431,
+     "Accuracy_1vsRest": 0.9784615384615385
+    },
+    {
+     "State": "jumping",
+     "Samples": 88,
+     "Sensitivity": 1.0,
+     "Specificity": 1.0,
+     "Accuracy_1vsRest": 1.0
+    }
+   ]
+  },
+  "supervised": {
+   "acc": 0.96,
+   "acc_per_file": [
+    0.9578313253012049,
+    0.9622641509433962
+   ],
+   "C": [
+    [
+     74,
+     0,
+     7,
+     0
+    ],
+    [
+     6,
+     80,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     70,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     88
+    ]
+   ],
+   "table": [
+    {
+     "State": "standing",
+     "Samples": 81,
+     "Sensitivity": 0.9135802469135802,
+     "Specificity": 0.9754098360655737,
+     "Accuracy_1vsRest": 0.96
+    },
+    {
+     "State": "standstill",
+     "Samples": 86,
+     "Sensitivity": 0.9302325581395349,
+     "Specificity": 1.0,
+     "Accuracy_1vsRest": 0.9815384615384616
+    },
+    {
+     "State": "walking",
+     "Samples": 70,
+     "Sensitivity": 1.0,
+     "Specificity": 0.9725490196078431,
+     "Accuracy_1vsRest": 0.9784615384615385
+    },
+    {
+     "State": "jumping",
+     "Samples": 88,
+     "Sensitivity": 1.0,
+     "Specificity": 1.0,
+     "Accuracy_1vsRest": 1.0
+    }
+   ]
+  },
+  "supervised+BW": {
+   "acc": 0.9415384615384615,
+   "acc_per_file": [
+    0.9216867469879518,
+    0.9622641509433962
+   ],
+   "C": [
+    [
+     69,
+     0,
+     12,
+     0
+    ],
+    [
+     7,
+     79,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     70,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     88
+    ]
+   ],
+   "table": [
+    {
+     "State": "standing",
+     "Samples": 81,
+     "Sensitivity": 0.8518518518518519,
+     "Specificity": 0.9713114754098361,
+     "Accuracy_1vsRest": 0.9415384615384615
+    },
+    {
+     "State": "standstill",
+     "Samples": 86,
+     "Sensitivity": 0.9186046511627907,
+     "Specificity": 1.0,
+     "Accuracy_1vsRest": 0.9784615384615385
+    },
+    {
+     "State": "walking",
+     "Samples": 70,
+     "Sensitivity": 1.0,
+     "Specificity": 0.9529411764705882,
+     "Accuracy_1vsRest": 0.963076923076923
+    },
+    {
+     "State": "jumping",
+     "Samples": 88,
+     "Sensitivity": 1.0,
+     "Specificity": 1.0,
+     "Accuracy_1vsRest": 1.0
+    }
+   ]
+  },
+  "random+BW": {
+   "acc": 0.9415384615384615,
+   "acc_per_file": [
+    0.9216867469879518,
+    0.9622641509433962
+   ],
+   "C": [
+    [
+     69,
+     0,
+     12,
+     0
+    ],
+    [
+     7,
+     79,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     70,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     88
+    ]
+   ],
+   "table": [
+    {
+     "State": "standing",
+     "Samples": 81,
+     "Sensitivity": 0.8518518518518519,
+     "Specificity": 0.9713114754098361,
+     "Accuracy_1vsRest": 0.9415384615384615
+    },
+    {
+     "State": "standstill",
+     "Samples": 86,
+     "Sensitivity": 0.9186046511627907,
+     "Specificity": 1.0,
+     "Accuracy_1vsRest": 0.9784615384615385
+    },
+    {
+     "State": "walking",
+     "Samples": 70,
+     "Sensitivity": 1.0,
+     "Specificity": 0.9529411764705882,
+     "Accuracy_1vsRest": 0.963076923076923
+    },
+    {
+     "State": "jumping",
+     "Samples": 88,
+     "Sensitivity": 1.0,
+     "Specificity": 1.0,
+     "Accuracy_1vsRest": 1.0
+    }
+   ]
+  }
+ },
+ "errors": [
+  {
+   "recording": "standing_05",
+   "file": 1,
+   "true": "standing",
+   "windows": 10,
+   "err_primary": 7,
+   "err_label_only": 5,
+   "pred_primary": "walking",
+   "acc_rms": 0.450452843210701,
+   "class_mean_acc_rms": 0.20372953507641578,
+   "gyr_rms": 0.1995478647958358,
+   "tilt_deg": 10.65224968188421
+  },
+  {
+   "recording": "standstill_36",
+   "file": 2,
+   "true": "standstill",
+   "windows": 6,
+   "err_primary": 6,
+   "err_label_only": 6,
+   "pred_primary": "standing",
+   "acc_rms": 0.1741274679974628,
+   "class_mean_acc_rms": 0.0733314688570959,
+   "gyr_rms": 0.006512963184261987,
+   "tilt_deg": 0.8493439867363123
+  },
+  {
+   "recording": "standing_20",
+   "file": 1,
+   "true": "standing",
+   "windows": 6,
+   "err_primary": 5,
+   "err_label_only": 2,
+   "pred_primary": "walking",
+   "acc_rms": 0.5016198187678351,
+   "class_mean_acc_rms": 0.20372953507641578,
+   "gyr_rms": 0.18554721380340566,
+   "tilt_deg": 11.983603178061538
+  },
+  {
+   "recording": "standstill_09",
+   "file": 1,
+   "true": "standstill",
+   "windows": 9,
+   "err_primary": 1,
+   "err_label_only": 0,
+   "pred_primary": "standing",
+   "acc_rms": 0.08310620591858091,
+   "class_mean_acc_rms": 0.0733314688570959,
+   "gyr_rms": 0.0017862417296440813,
+   "tilt_deg": 5.520079113294632
+  }
+ ],
+ "rate_exp": [
+  {
+   "rate_hz": 100,
+   "supervised": 0.96,
+   "supervised+BW": 0.9415384615384615
+  },
+  {
+   "rate_hz": 50,
+   "supervised": 0.96,
+   "supervised+BW": 0.9476923076923077
+  },
+  {
+   "rate_hz": 25,
+   "supervised": 0.9622093023255814,
+   "supervised+BW": 0.9447674418604651
+  }
+ ],
+ "noise_exp": [
+  {
+   "sigma": 0.0,
+   "supervised": 0.96,
+   "supervised+BW": 0.9415384615384615
+  },
+  {
+   "sigma": 0.05,
+   "supervised": 0.7138461538461538,
+   "supervised+BW": 0.6923076923076923
+  },
+  {
+   "sigma": 0.1,
+   "supervised": 0.7107692307692308,
+   "supervised+BW": 0.6738461538461539
+  },
+  {
+   "sigma": 0.2,
+   "supervised": 0.68,
+   "supervised+BW": 0.6123076923076923
+  },
+  {
+   "sigma": 0.5,
+   "supervised": 0.5846153846153846,
+   "supervised+BW": 0.5446153846153846
+  }
+ ]
+}
